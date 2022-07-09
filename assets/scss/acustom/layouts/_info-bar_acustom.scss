@@ -1,0 +1,28 @@
+.info-bar{
+    background-color: $SECONDARY;
+    margin-top:  9px;
+    @include breakpoint("medium") {
+      margin-top:  0px;
+    }
+  }
+  
+  .info-bar-container{
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 60%;
+  }
+  
+  .info-contents{
+    flex: 1; //1 80px;
+    border: 1px solid blue;
+  }
+  
+  .info-contents:nth-child(2) {
+    display: none;
+    @include breakpoint("medium") {
+      display: block;
+    }
+  
+  }

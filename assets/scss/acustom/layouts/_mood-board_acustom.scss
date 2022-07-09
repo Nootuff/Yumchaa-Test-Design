@@ -1,0 +1,84 @@
+.mood-board {
+  border: 1px solid greenyellow;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  @include breakpoint("medium") {
+    width: 95%;
+  }
+
+  h1 {
+    //text-align: center;
+    line-height: 32px;
+    font-weight: 400;
+    margin: 50px 0 -15px;
+
+    @include breakpoint("medium") {
+      margin: 50px 0 30px;
+    }
+  }
+
+  .mood-board-subheader {
+    display: block;
+    font-style: italic;
+    margin-bottom: 30px;
+
+    @include breakpoint("medium") {
+      display: none;
+    }
+  }
+}
+
+.mood-text {
+  color: $TECH-WHITE;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: $UglyQua-text;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.mood-grid {
+  display: grid;
+  border: 1px solid blue;
+  margin: auto;
+  grid-template-columns: 1;
+  grid-gap: 1rem;
+
+  @include breakpoint("medium") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint("large") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mood-card {
+  position: relative;
+  border: 1px solid red;
+  margin: auto;
+}
+
+.nine {
+  @include breakpoint("medium") {
+    display: none;
+  }
+  @include breakpoint("large") {
+    display: block;
+  }
+}
+
+.shop-all {
+  margin-top: 10px;
+  width: 100%;
+  //border: 1px solid red;
+  @include breakpoint("medium") {
+    display: block;
+  }
+  @include breakpoint("large") {
+    display: none;
+  }
+}

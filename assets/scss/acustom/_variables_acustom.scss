@@ -9,7 +9,7 @@ $ACCENT: #a2ec8e;
 // Secondary variants
 $TECH-80: #7b7b7b;
 $TECH-60: #dbdada;
-$Tech-40: #f9f9f9;
+$TECH-40: #f9f9f9;
 $TECH-WHITE: #ffffff;
 
 // Font variants
@@ -42,6 +42,14 @@ $btn-font-weight: 700;
     background-color: $ACCENT;
     color: $PRIMARY;
     border: none;
+}
+
+//Text
+
+$UglyQua-text: "UglyQua";
+
+.UglyQua-text{
+    font-family: $UglyQua-text;
 }
 
 // hover

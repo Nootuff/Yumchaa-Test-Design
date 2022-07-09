@@ -184,7 +184,8 @@
     }
 }
 
-.navPages-action {
+.navPages-action { //The individual words in the menu
+    //border: 1px solid red;
     color: stencilColor("navPages-color");
     display: block;
     font-size: fontSize("smaller");

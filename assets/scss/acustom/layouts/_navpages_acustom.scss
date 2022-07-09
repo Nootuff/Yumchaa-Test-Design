@@ -1,16 +1,20 @@
 .navPages-container {
-// border: 1px solid green;
+ //border: 1px solid green;
     margin-top: 30px;
     padding: 0;
     font-family: "UglyQua";
     margin: 0;
-    background-color: $Tech-40;
+    background-color: $TECH-40;
+    display: none;
+    @include breakpoint("medium") { 
+        display: block;
+    }
 }
 
 .navPages{
-   // border: 6px solid yellow;
+   border: 1px solid yellow;
     width: 100%;
-    margin: 0;
+    margin: auto;
    
 }
 

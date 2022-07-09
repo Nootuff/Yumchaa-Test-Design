@@ -15,6 +15,10 @@
     "home": {
         "heading": "Home"
     },
+    "mood": {
+        "heading": "Choose by Mood",
+        "sub-heading": "Slide to see all"
+    },
     "blog": {
         "recent_posts": "Recent Posts",
         "label": "Blog",

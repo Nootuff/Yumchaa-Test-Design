@@ -35,8 +35,9 @@
 
 .header {
     background-color: $header-bg;
-    border-bottom: container("border");
-    height: $header-height;
+border: 1px solid red;
+    //border-bottom: container("border");
+    height: 100px;//$header-height;
     position: fixed;
     top: 0;
     width: 100%;
