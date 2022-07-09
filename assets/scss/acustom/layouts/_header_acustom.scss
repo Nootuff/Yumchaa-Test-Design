@@ -1,0 +1,64 @@
+.header{
+//border: 5px dotted palevioletred;
+padding: 0;
+width: 100%;
+}
+
+.navUser {
+  //background-color: blue;
+  background-color: $PRIMARY;
+  height: 80px;
+  line-height: 73px;
+  padding-right: 80px;
+}
+
+.navUser-section {
+  border: 1px solid red;
+  display: inline;
+  float: right;
+  li {
+    display: inline;
+  }
+}
+
+.navUser-action {
+  color: $TECH-WHITE;
+}
+
+.header-logo {
+  border: 1px solid green;
+  /* height: auto; 
+    width: auto; 
+    max-width: 220px; 
+    max-height: 220px;
+    margin-top: -83px;
+    margin-left: 20px;*/
+}
+
+
+
+.info-bar{
+  background-color: $SECONDARY;
+
+}
+
+.info-bar-container{
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 60%;
+}
+
+.info-contents{
+  flex: 1; //1 80px;
+  border: 1px solid blue;
+}
+
+.info-contents:nth-child(2) {
+  display: none;
+  @include breakpoint("medium") {
+    display: block;
+  }
+
+}

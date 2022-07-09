@@ -1,0 +1,589 @@
+// Project colors -----------------------------------------------------------------------------------------------
+
+// Primary variants
+
+$PRIMARY: #232323;
+$SECONDARY: #fff4e3;
+$ACCENT: #a2ec8e;
+
+// Secondary variants
+$TECH-80: #7b7b7b;
+$TECH-60: #dbdada;
+$Tech-40: #f9f9f9;
+$TECH-WHITE: #ffffff;
+
+// Font variants
+//$White: #FFFFFF;
+
+// Project buttons -----------------------------------------------------------------------------------------------
+
+// General button settings
+//========================
+$btn-padding: 0.5rem 1.5rem;
+$btn-border-size: 1px;
+$btn-radius: 50%; //1.25rem;
+$btn-font-size: 1.25rem;
+$btn-line-height: 1.25rem;
+$btn-font-weight: 700;
+
+// Primary button
+
+.button--primary {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+  background-color: $PRIMARY;
+  color: $TECH-WHITE;
+  padding: 12px 24px;
+  border-radius: 24px;
+  width: 132px;
+  height: 44px;
+}
+
+.button--primary:hover {
+    background-color: $ACCENT;
+    color: $PRIMARY;
+    border: none;
+}
+
+// hover
+/*
+$btn-ph-bg: $color-p;
+$btn-ph-color: $color-f-w;
+$btn-ph-border: $color-p;
+.button--primary:hover,
+.button--primary:focus {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08);
+}
+// active
+$btn-pa-bg: $color-s;
+$btn-pa-color: $color-p;
+$btn-pa-border: $color-s;
+
+// disabled
+.button--primary[disabled] {
+    background-color: $color-f-g;
+    color: $color-f-g-d;
+}
+*/
+
+/*
+// -p 
+$color-p-l: #EE455D;
+$color-p: #6F1D46;
+
+// Secondary variants
+// -s 
+$color-s: #F4CD5E;
+$color-s-d: #1EC0CA;
+
+// Font variants
+// -f 
+// w - white; g - gray; b - black
+$color-f-w: #FFFFFF;
+$color-f-w-d: #EFEFEF;
+$color-f-g: #DBDADA;
+$color-f-g-d: #C7C7C7;
+$color-f-b: #333333;
+
+// Project buttons -----------------------------------------------------------------------------------------------
+
+// General button settings
+//========================
+$btn-padding: 0.5rem 1.5rem;
+$btn-border-size: 1px;
+$btn-radius: 1.25rem;
+$btn-font-size: 1.25rem;
+$btn-line-height: 1.25rem;
+$btn-font-weight: 700;
+
+// Primary button
+// -p 
+$btn-p-bg: $color-s;
+$btn-p-color: $color-p;
+$btn-p-border: $color-s;
+.button--primary {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+}
+// hover
+$btn-ph-bg: $color-p;
+$btn-ph-color: $color-f-w;
+$btn-ph-border: $color-p;
+.button--primary:hover,
+.button--primary:focus {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08);
+}
+// active
+$btn-pa-bg: $color-s;
+$btn-pa-color: $color-p;
+$btn-pa-border: $color-s;
+
+// disabled
+.button--primary[disabled] {
+    background-color: $color-f-g;
+    color: $color-f-g-d;
+}
+
+
+
+// Secondary button
+// -s
+$btn-s-bg: $color-p;
+$btn-s-color: $color-f-w;
+$btn-s-border: $color-p;
+.button--secondary {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+}
+// hover
+$btn-sh-bg: $color-p-l;
+$btn-sh-color: $color-f-w;
+$btn-sh-border: $color-p-l;
+.button--secondary:hover,
+.button--secondary:focus {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08);
+}
+// active
+$btn-sa-bg: $color-p;
+$btn-sa-color: $color-f-w;
+$btn-sa-border: $color-p;
+// disabled
+.button--secondary[disabled] {
+    background-color: $color-f-w;
+    color: $color-f-g-d;
+    border-color: $color-f-g-d;
+}
+
+
+// Tertiary button
+// -t
+$btn-t-bg: $color-f-w;
+$btn-t-color: $color-p;
+$btn-t-border: $color-p;
+.button--tertiary {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+}
+// hover
+$btn-th-bg: $color-f-w;
+$btn-th-color: $color-p;
+$btn-th-border: $color-s;
+.button--tertiary:hover,
+.button--tertiary:focus {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08);
+}
+// active
+$btn-ta-bg: $color-f-w;
+$btn-ta-color: $color-p;
+$btn-ta-border: $color-p;
+// disabled
+
+
+@mixin undoPadding {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    @media only screen and (min-width: 651px){
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+    }
+    @media only screen and (min-width: 1488px){
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@mixin addPadding {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    @media only screen and (min-width: 651px){
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media only screen and (min-width: 1488px){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@mixin top-red-basic {
+    &::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/pdp-burgundy.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: top;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+        }
+    }
+}
+
+@mixin top-red-basic2 {
+   
+    &::before {
+        position: absolute;
+        top: -31px;
+        content: "";
+        min-height: 32px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/about-burgundy.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+            top: -35px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+            top: -131px;
+        }
+        @include undoPadding;
+    }
+}
+
+@mixin bottom-red-basic {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/about-burgundy.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+        }
+    }
+}
+
+@mixin bottom-red-splatter {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 52px;
+        max-height: 131px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/desktop-burgundy.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 72px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 131px;
+        }
+    }
+}
+
+@mixin bottom-red-dots {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 52px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/desktop-burgundy-2.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 72px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+        }
+    }
+}
+
+@mixin bottom-blue-basic {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 72px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/desktop-blue.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 72px;
+        }
+    }
+}
+
+@mixin bottom-blue-splatter {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 52px;
+        max-height: 131px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/pdp-blue.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        @media only screen and (min-width: 651px){
+            min-height: 72px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 131px;
+        }
+    }
+}
+
+@mixin top-yellow-basic {
+    &::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 36px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/faq-top.png");
+        background-color: $color-p;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            display: none;
+        }
+    }
+}
+
+@mixin bottom-yellow-basic {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 36px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/faq-bottom.png");
+        background-color: $color-p;
+        background-size: contain;
+        background-position-y: top;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            width: 100vw;
+            height: 100%;
+            max-height: none;
+            top: 0;
+            background-color: $color-s;
+            background-image: none;
+            left: -100vw;
+        }
+    }
+}
+
+@mixin bottom-yellow-basic2 {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 36px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/faq-top.png");
+        background-color: $color-p;
+        background-size: contain;
+        background-position-y: top;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            width: 100vw;
+            height: 100%;
+            max-height: none;
+            top: 0;
+            background-color: $color-s;
+            background-image: none;
+            left: -100vw;
+        }
+    }
+}
+
+@mixin bottom-yellow-dots {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 52px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/footer.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 72px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+        }
+    }
+}
+
+@mixin top-white-basic {
+    &::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 36px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/pdp-white-top.png");
+        background-color: $color-p;
+        background-size: contain;
+        background-position-y: top;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 72px;
+        }
+    }
+}
+
+@mixin bottom-white-basic {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 32px;
+        max-height: 72px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/desktop-white.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-repeat: repeat-x;
+        @media only screen and (min-width: 651px){
+            min-height: 36px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 72px;
+        }
+    }
+}
+
+@mixin bottom-white-dots {
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        min-height: 52px;
+        max-height: 132px;
+        width: 100%;
+        display: inline-block;
+        background-image: url("../img/borders/blog-white.png");
+        background-color: transparent;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        @media only screen and (min-width: 651px){
+            min-height: 72px;
+        }
+        @media only screen and (min-width: 951px){
+            min-height: 132px;
+        }
+    }
+}
+
+
+// Responsive sizes (starts at, mobile first) use min-width -----------------------------------------------------
+// $tablet: 650px;
+// $desktop: 1100px;
+
+
+
+
+*/

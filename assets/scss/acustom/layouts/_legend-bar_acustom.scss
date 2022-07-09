@@ -1,0 +1,38 @@
+
+
+.legend-bar {
+  //Try to move this all to its own file.
+  background-color: $Tech-40;//$form-label-font-color;//$Accent;// #f9f9f9; //$Light-grey; //Why doesn't this work?
+
+  //  border: 1px solid greenyellow;
+  .legend-contents {
+    // border: 1px solid crimson;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    @include breakpoint("medium") {
+      width: 100%;
+      grid-template-columns: auto auto auto auto;
+    }
+    @include breakpoint("large") {
+      width: 80%;
+    }
+    .legend-section {
+      text-align: center;
+      //  padding: 20px;
+      //border: 1px solid green;
+
+      img {
+        width: 200px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Inter";
+      }
+    }
+  }
+}
