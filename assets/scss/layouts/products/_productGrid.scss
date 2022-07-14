@@ -17,18 +17,19 @@
     font-size: 0; // 1
     margin-bottom: spacing("single");
 
-    .product {
+    .product { //Determines how manu columns your product grid has 
         @include grid-column(6, $float: none);
         display: inline-block;
         font-size: fontSize("base"); // 1
         vertical-align: top;
+        width: 100%;
 
         @include breakpoint("small") {
-            width: grid-calc(4, $total-columns);
+            width: grid-calc(6, $total-columns);
         }
 
         @include breakpoint("medium") {
-            width: grid-calc(3, $total-columns);
+            width: grid-calc(4, $total-columns);
         }
     }
 }
@@ -42,10 +43,11 @@
 // -----------------------------------------------------------------------------
 
 .page-sidebar + .page-content {
+    
     .productGrid {
         .product { // 1
             @include breakpoint("small") {
-                width: grid-calc(4, $total-columns);
+             width: grid-calc(4, $total-columns);
             }
         }
     }

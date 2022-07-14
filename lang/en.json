@@ -37,6 +37,10 @@
     "categories": {
         "no_products": "There are no products listed under this category."
     },
+    "product_list_sidebar": {
+        "refine_by": "Refine By"
+
+    },
     "checkout": {
         "title": "Checkout"
     },

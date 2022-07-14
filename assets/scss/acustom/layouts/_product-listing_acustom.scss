@@ -1,0 +1,55 @@
+.product-subheading {
+  width: 70%;
+  text-align: center;
+  margin: -20px auto 20px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  color: $PRIMARY;
+  line-height: 20px;
+}
+
+#product-listing-container {
+  border: 1px solid red;
+  width: 70%;
+  margin-right: 12px;
+  float: right;
+}
+
+.product-list-sidebar {
+  position: absolute;
+  border: 1px solid blue;
+  height: 100%;
+  min-width: 27%;
+  margin-left: 12px;
+  padding-left: 40px;
+
+  h4 {
+    font-weight: bold;
+  }
+  hr {
+    border-top: 1px solid $PRIMARY;
+  }
+
+  form {
+    //max-width: 200px;
+    //border: 1px solid rebeccapurple;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-columns: 3;
+    float: right;
+    margin-right: 5px;
+    .price-form-item {
+      display: inline;
+      width: 100px;
+      //border: 1px solid royalblue;
+      padding: 0;
+      height: 44px;
+    }
+
+    input {
+      border: 2px solid $TECH-60;
+      //margin:0 10px;
+      border-radius: 5px;
+    }
+  }
+}

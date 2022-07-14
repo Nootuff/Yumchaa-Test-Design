@@ -1,8 +1,9 @@
 .mood-board {
-  border: 1px solid greenyellow;
+ // border: 1px solid greenyellow;
   width: 100%;
   margin: auto;
   text-align: center;
+  
 
   @include breakpoint("medium") {
     width: 95%;
@@ -42,14 +43,14 @@
 }
 
 .mood-grid {
-  display: grid;
+  //display: none; Remember on mobile screens this grid will be replaced with a carousel. 
   border: 1px solid blue;
   margin: auto;
-  grid-template-columns: 1;
-  grid-gap: 1rem;
-
+ 
   @include breakpoint("medium") {
     grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-gap: 1rem;
   }
   @include breakpoint("large") {
     grid-template-columns: repeat(3, 1fr);
@@ -58,7 +59,7 @@
 
 .mood-card {
   position: relative;
-  border: 1px solid red;
+ // border: 1px solid red;
   margin: auto;
 }
 

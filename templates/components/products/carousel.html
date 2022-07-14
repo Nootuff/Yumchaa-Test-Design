@@ -10,8 +10,8 @@
             {
                 "breakpoint": 800,
                 "settings": {
-                    "slidesToShow": {{ columns }},
-                    "slidesToScroll": {{ columns }}
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2
                 }
             },
             {
@@ -24,7 +24,13 @@
         ]
     }'
 >
+
+
+
     {{#each products}}
+
+
+    
     <div data-product-slide class="productCarousel-slide" >
         {{> components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
     </div>

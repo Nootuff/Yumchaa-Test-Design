@@ -26,11 +26,18 @@ category:
     }}
 {{/if}}
 {{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
+    <h1 class="page-heading">{{category.name}}</h1> <!--This is the name appearing at the top of each category page-->
+    <h4 class="product-subheading">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur
+      </h4>
     {{{region name="category_below_header"}}}
 {{/unless}}
 {{{category.description}}}
-<div class="page">
+<div class="page" style="border: 1px solid palevioletred">
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
@@ -45,9 +52,12 @@ category:
                 {{> components/category/sidebar}}
             </aside>
         {{/if}}
-    {{/if}}
+    {{/if}} 
+  
+{{> components/search/product-list-sidebar}}
 
-    <div class="page-content" id="product-listing-container">
+
+    <div class="page-content" id="product-listing-container" >
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div>
