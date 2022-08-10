@@ -61,11 +61,13 @@
 }
 
 .productView-thumbnails {
+    border: 1px solid orange;
+    width: 50%;
     @include u-listBullets("none");
-    @include grid-row($behavior: "nest");
+    //@include grid-row($behavior: "nest");
 
-    margin-left: -(spacing("quarter"));
-    margin-right: -(spacing("quarter"));
+   // margin-left: -(spacing("quarter"));
+   // margin-right: -(spacing("quarter"));
 
     &[data-slick] {
         opacity: 0;

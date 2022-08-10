@@ -7,7 +7,7 @@ product:
     related_products:
         limit: {{theme_settings.productpage_related_products_count}}
     similar_by_views:
-        limit: {{theme_settings.productpage_similar_by_views_count}}
+        limit: 0 <!--{{theme_settings.productpage_similar_by_views_count}} -->
 ---
 {{inject 'productId' product.id}}
 
@@ -32,7 +32,15 @@ product:
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/all}}
 
-        {{> components/products/tabs}}
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-related">
+            {{#if settings.data_tag_enabled}}
+                {{> components/products/carousel products=product.related_products columns=4 list="Related Products"}}
+            {{else}}
+                {{> components/products/carousel products=product.related_products columns=4}}
+            {{/if}}
+        </div>
+
+        <!--{{> components/products/tabs}} -->
     </div>
 
     {{> components/products/schema}}

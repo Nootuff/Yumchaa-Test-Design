@@ -1,3 +1,9 @@
+<script>
+  function tester(){
+    alert("hello")
+  }
+</script>
+
 <div class="productView"
     {{#if settings.data_tag_enabled}}
     data-event-type="product"
@@ -28,6 +34,8 @@
             {{> components/common/alert/alert-success success}}
         {{/if}}
     {{/each}}
+
+<button onclick="tester()">tester</button>
 
     <section class="productView-images" data-image-gallery>
         {{!--
@@ -63,16 +71,19 @@
                 {{/if}}
             </div>
         </figure>
+        <div class="product-thumbs-wrap"> <!--Needed for the vertical version of the image carousel -->
         <ul class="productView-thumbnails"{{#gt product.images.length 5}} data-slick='{
                 "infinite": false,
                 "mobileFirst": true,
                 "dots": false,
                 "accessibility": false,
-                "slidesToShow": 5,
+                "slidesToShow": 5, 
                 "slidesToScroll": 5
             }'{{/gt}}>
+            <!--slidesToShow, slidesToScroll and #gt product.images.length must all be set to the same number for the carousel to 
+            display that number-->
             {{#each product.images}}
-                <li class="productView-thumbnail">
+                <li class="productView-thumbnail" >
                     <a
                         class="productView-thumbnail-link"
                         href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
@@ -90,6 +101,7 @@
                 </li>
             {{/each}}
         </ul>
+    </div>
     </section>
 
     <section class="productView-details product-data">
@@ -99,7 +111,35 @@
                 <h2 class="productView-brand">
                     <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
                 </h2>
+              
             {{/if}}
+
+
+    
+            
+  {{#if product.custom_fields.length}} <!--If there are custom fields at all-->
+
+    {{#each product.custom_fields}} <!--Go through each custom field with #each-->
+      {{#if name '===' '_discount' }} <!--If any of them have the name "_discount"-->
+      <h3>Discount:  <!--Render an h3-->
+        {{#if value ">" 0}}  <!--If "_discounts" value is over 0-->
+          <span>{{{value}}}%</span> <!--Render the value in a span within the h3 with a % after it-->
+            {{else}}
+          <span> Zero</span> <!--Otherwise, render "zero"-->
+            {{/if}} <!--Close the #if for detecting value-->
+        </h3>
+        {{else}}
+        <h3>No discount</h3> <!--If there are custom fields but none are "_discount" render this-->
+              {{/if}} <!--Close the #if for detecting if "_discount" is present-->
+            {{/each}} <!--Close the #each-->
+
+    {{else}} <!--If there are no custom fields signified by no length-->
+      <p>No fields</p> <!--Just render a p with "No fields"-->
+
+    {{/if}} <!--Close the outer #if-->
+
+
+
             {{#if product.call_for_price}}
                 <p class="productView-price">
                     <span>{{product.call_for_price}}</span>
@@ -124,6 +164,7 @@
                         <span>{{lang 'products.reviews.link_to_review' total=product.num_reviews}}</span>
                     {{/if}}
                 {{/if}}
+
                 {{#if settings.show_product_reviews}}
                     <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
                        class="productView-reviewLink productView-reviewLink--new"
@@ -136,6 +177,22 @@
                         {{> components/products/modals/writeReview}}
                     {{/unless}}
                 {{/if}}
+
+                {{#if theme_settings.show_product_details_tabs}}
+                <article class="product-description">
+                <div> 
+                   <h2> {{lang 'products.description'}}</h2>
+                <p>{{{product.description}}}</p>
+                </div>
+            </article>
+
+          
+            {{/if}}
+
+        <!--    {{#each product.options}}
+<button>test</button>
+            {{/each}}-->
+
             </div>
             {{product.detail_messages}}
             <dl class="productView-info">
@@ -217,12 +274,14 @@
                     </div>
                 {{/if}}
 
-                {{#if theme_settings.show_custom_fields_tabs '!==' true}}
+                <!--{{#if theme_settings.show_custom_fields_tabs '!==' true}} <!--THis is the code that prints out the custom values, you could use a 
+                contitional to render only the ones you want just like the suncore discount flags.
                     {{#each product.custom_fields}}
-                        <dt class="productView-info-name">{{name}}:</dt>
-                        <dd class="productView-info-value">{{{ sanitize value}}}</dd>
+                        <dt class="productView-info-name">{{name}}:</dt> <!--Name of custom value
+                        <dd class="productView-info-value">{{{ sanitize value}}}</dd> <!--Its value
                     {{/each}}
-                {{/if}}
+                {{/if}} -->
+                
             </dl>
         </div>
     </section>
@@ -261,9 +320,9 @@
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
         </div>
-        {{> components/common/share url=product.url}}
+        <!-- {{> components/common/share url=product.url}} -->
     </section>
-
+<!--
     <article class="productView-description">
         {{#if theme_settings.show_product_details_tabs}}
             {{> components/products/description-tabs}}
@@ -271,6 +330,8 @@
             {{> components/products/description}}
         {{/if}}
     </article>
+-->
+
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>

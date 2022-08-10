@@ -1,7 +1,45 @@
+<style>
+
+
+</style>
+
+
 <div class="product-list-sidebar">
-  <h4>{{lang "product_list_sidebar.refine_by"}}</h4>
-  <p>Option group</p>
+
+ {{#if settings.request.absolute_path "===" "/shop-all/"}} <!--render only if url ends with shop-all-->
+ 
+  <p>Shop By</p>
+{{categories.count}}
+
+  <ul>
+  {{#each categories}}
+<li>
+  <a
+  href="{{url}}"
+   aria-label="{{name}}"
+  >
+  {{name}} <!--  category -->
+  </a>
+</li>
+  {{/each}}
+</ul>
+{{/if}}
+
+
+  
+  <h4>{{lang "product_list_sidebar.refine_by"}}</h4> 
+  <div class="option-group" >
+  <p onclick="tester()">Option Group</p>
+  <button onclick="myFunction()" >+</button>
   <hr />
+<ul id="product-list-sidebar-dropdown"  class="product-list-sidebar-dropdown-content">
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+</div>
+
+  <p><a href="#">Show More</a></p>
 
   <p>Price</p>
   <hr />
@@ -13,3 +51,32 @@
     </form>
   </div>
 </div>
+
+
+<script>
+  
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+   // alert("open")
+    document.getElementById("product-list-sidebar-dropdown").classList.toggle("show-product-list-sidebar-dropdown-content");
+  }
+  
+  /*
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  */
+  
+  </script>
